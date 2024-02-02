@@ -1,14 +1,24 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Provider } from "@/provider";
+import GlobalContext from "@/context";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "900"],
+});
 
 export const metadata: Metadata = {
   title: "Netflix | @rof1yev",
   description:
     "You can watch as much as you want, whenever you want without a single commercial – all for one low monthly price. There's always something new to discover and new TV shows and movies are added every week!",
+  icons: [
+    {
+      url: "/netflix-icon.svg",
+      href: "/netflix-icon.svg",
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -18,14 +28,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <Provider
           attribute="class"
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <GlobalContext>{children}</GlobalContext>
         </Provider>
       </body>
     </html>
