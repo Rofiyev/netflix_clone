@@ -21,6 +21,7 @@ const ManageAccount = () => {
   };
 
   const switchAccountHandler = () => {
+    setOpen(true);
     setState("login");
   };
 

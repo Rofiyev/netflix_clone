@@ -9,7 +9,9 @@ const Modal: FC<{ children: ReactNode }> = ({ children }) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={() => setOpen(!isOpen)}>
-      <DialogContent className="max-w-2xl">{children}</DialogContent>
+      <DialogContent className="max-w-2xl min-h-[20vh] bg-slate-900 !rounded-sm">
+        {children}
+      </DialogContent>
     </Dialog>
   );
 };

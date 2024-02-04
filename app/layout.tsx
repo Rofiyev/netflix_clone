@@ -6,7 +6,7 @@ import GlobalContext from "@/context";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "700", "900"],
+  weight: "500",
 });
 
 export const metadata: Metadata = {
@@ -29,12 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <Provider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <Provider attribute="class" defaultTheme="dark">
           <GlobalContext>{children}</GlobalContext>
         </Provider>
       </body>
